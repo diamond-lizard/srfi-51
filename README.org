@@ -24,6 +24,7 @@ When defining a procedure with a variable number of arguments, REST-VALUES
 with or without the checking macros reduces the clutter of various
 conditionals and error conditions.
 ** Specification
+*** REST-VALUES
 (REST-VALUES [<caller>] <rest-list> [<args-number-limit> <default> ...])
 
     * <caller> is any scheme expression.
@@ -64,7 +65,7 @@ conditionals and error conditions.
    above processing, REST-VALUES either signals an error if the
    <args-number-limit> is #t, or returns the remaining elements of the
    <rest-list> if the <args-number-limit> is #f.
-
+*** ARG and END procedures
 (ARG-AND [<caller>] <variable> <expr> ...)
 (ARG-ANDS [COMMON <caller>] ([<caller>] <variable> <expr> ...) ...)
 (ERR-AND <caller> <expression> ...)
@@ -85,6 +86,7 @@ signal an error in case AND returns a false value.
 ARG-OR, ARG-ORS, ERR-OR, and ERR-ORS are the same as OR except that these
 signal an error in case OR returns a true value.
 ** Examples
+#+BEGIN_SRC scheme
 caller    => <procedure caller>
 rest-list => (x 1)
 (rest-values rest-list)	                 => x 1
@@ -188,6 +190,7 @@ num    => 2
     (let* ((b (or b (+ a 10)))
 	   (c (or c (+ a b))))
       ...)))
+#+END_SRC
 ** Implementation
 The implementation below requires SRFI-1 (List library) and SRFI-23 (Error
 reporting mechanism).
