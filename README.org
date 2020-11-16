@@ -190,7 +190,8 @@ num    => 2
       ...)))
 #+END_SRC
 ** Author
-Joo ChurlSoo
+ * Joo ChurlSoo
+ * Ported to Chicken Scheme 5 by Sergey Goldgaber
 ** Copyright
 Copyright (C) Joo ChurlSoo (2004). All Rights Reserved.
 
