@@ -1,8 +1,8 @@
-* SRFI-51: Handling rest list
-** Related SRFIs
+== SRFI-51: Handling rest list
+=== Related SRFIs
 The procedure and macros proposed in this SRFI make a strong combination with
 RECEIVE ([[https://srfi.schemers.org/srfi-8/][SRFI 8]]) and LET-VALUES ([[https://srfi.schemers.org/srfi-11/][SRFI 11]]).
-** Abstract
+=== Abstract
 This SRFI introduces the REST-VALUES procedure which has three modes of
 operation:
 
@@ -17,12 +17,12 @@ operation:
 
 and eight macros which additionally check the rest arguments that are returned
 by REST-VALUES.
-** Rationale
+=== Rationale
 When defining a procedure with a variable number of arguments, REST-VALUES
 with or without the checking macros reduces the clutter of various
 conditionals and error conditions.
-** Specification
-*** REST-VALUES
+=== Specification
+==== REST-VALUES
 (REST-VALUES [<caller>] <rest-list> [<args-number-limit> <default> ...])
 
     * <caller> is any scheme expression.
@@ -63,7 +63,7 @@ conditionals and error conditions.
    above processing, REST-VALUES either signals an error if the
    <args-number-limit> is #t, or returns the remaining elements of the
    <rest-list> if the <args-number-limit> is #f.
-*** ARG and END procedures
+==== ARG and END procedures
 (ARG-AND [<caller>] <variable> <expr> ...)
 (ARG-ANDS [COMMON <caller>] ([<caller>] <variable> <expr> ...) ...)
 (ERR-AND <caller> <expression> ...)
@@ -83,7 +83,7 @@ signal an error in case AND returns a false value.
 
 ARG-OR, ARG-ORS, ERR-OR, and ERR-ORS are the same as OR except that these
 signal an error in case OR returns a true value.
-** Examples
+=== Examples
 <enscript highlight="scheme">
 caller    => <procedure caller>
 rest-list => (x 1)
@@ -189,12 +189,12 @@ num    => 2
 	   (c (or c (+ a b))))
       ...)))
 </enscript>
-** Author
+=== Author
  * Joo ChurlSoo
  * Ported to Chicken Scheme 5 by Sergey Goldgaber
-** Version history
-*** [[https://github.com/diamond-lizard/srfi-51/releases/tag/0.1][0.1]] - Ported to Chicken Scheme 5
-** Copyright
+=== Version history
+==== [[https://github.com/diamond-lizard/srfi-51/releases/tag/0.1][0.1]] - Ported to Chicken Scheme 5
+=== Copyright
 Copyright (C) Joo ChurlSoo (2004). All Rights Reserved.
 
 This document and translations of it may be copied and furnished to others, and
