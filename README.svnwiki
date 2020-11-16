@@ -1,7 +1,7 @@
 * SRFI-51: Handling rest list
 ** Related SRFIs
 The procedure and macros proposed in this SRFI make a strong combination with
-RECEIVE (SRFI 8) and LET-VALUES (SRFI 11).
+RECEIVE ([[https://srfi.schemers.org/srfi-8/][SRFI 8]]) and LET-VALUES ([[https://srfi.schemers.org/srfi-11/][SRFI 11]]).
 ** Abstract
 This SRFI introduces the REST-VALUES procedure which has three modes of
 operation:
