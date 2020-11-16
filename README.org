@@ -192,6 +192,7 @@ num    => 2
 The implementation below requires SRFI-1 (List library) and SRFI-23 (Error
 reporting mechanism).
 
+#+BEGIN_SRC scheme
 (define (rest-values rest . default)
   (let* ((caller (if (or (null? default)
 			 (boolean? (car default))
@@ -451,6 +452,7 @@ reporting mechanism).
     ((err-ors (err expression ...) ...)
      (or (err-or err expression ...)
 	 ...))))
+#+END_SRC
 ** Copyright
 Copyright (C) Joo ChurlSoo (2004). All Rights Reserved.
 
