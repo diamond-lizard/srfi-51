@@ -25,8 +25,13 @@ conditionals and error conditions.
 ==== REST-VALUES
 <procedure>(REST-VALUES [<caller>] <rest-list> [<args-number-limit> <default> ...])</procedure>
 
-    * <caller> is any scheme expression.
-    * <args-number-limit> should be an integer, +, -, or a boolean.
+<parameter><caller></parameter>
+
+<caller> is any scheme expression.
+
+<parameter><args-number-limit></parameter>
+
+<args-number-limit> should be an integer, +, -, or a boolean.
 
     * 1. When the <args-number-limit> is + or a positive integer,
          each <default> should be a list that contains default value(s), or a
