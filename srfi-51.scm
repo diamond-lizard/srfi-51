@@ -1,5 +1,5 @@
 (module srfi-51 ()
-  (import (except scheme let))
+  (import scheme)
   (import (chicken base))
   (import (chicken module))
   (import (chicken platform))
