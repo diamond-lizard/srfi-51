@@ -23,7 +23,7 @@ with or without the checking macros reduces the clutter of various
 conditionals and error conditions.
 === Specification
 ==== REST-VALUES
-(REST-VALUES [<caller>] <rest-list> [<args-number-limit> <default> ...])
+<procedure>(REST-VALUES [<caller>] <rest-list> [<args-number-limit> <default> ...])</procedure>
 
     * <caller> is any scheme expression.
     * <args-number-limit> should be an integer, +, -, or a boolean.
@@ -64,15 +64,31 @@ conditionals and error conditions.
    <args-number-limit> is #t, or returns the remaining elements of the
    <rest-list> if the <args-number-limit> is #f.
 ==== ARG and END procedures
-(ARG-AND [<caller>] <variable> <expr> ...)
-(ARG-ANDS [COMMON <caller>] ([<caller>] <variable> <expr> ...) ...)
-(ERR-AND <caller> <expression> ...)
-(ERR-ANDS (<caller> <expression> ...) ...)
 
-(ARG-OR [<caller>] <variable> <expr> ...)
-(ARG-ORS [COMMON <caller>] ([<caller>] <variable> <expr> ...) ...)
-(ERR-OR <caller> <expression> ...)
-(ERR-ORS (<caller> <expression> ...) ...)
+<procedure>(ARG-AND [<caller>] <variable> <expr> ...)</procedure>
+
+
+<procedure>(ARG-ANDS [COMMON <caller>] ([<caller>] <variable> <expr> ...) ...)</procedure>
+
+
+<procedure>(ERR-AND <caller> <expression> ...)</procedure>
+
+
+<procedure>(ERR-ANDS (<caller> <expression> ...) ...)</procedure>
+
+
+
+<procedure>(ARG-OR [<caller>] <variable> <expr> ...)</procedure>
+
+
+<procedure>(ARG-ORS [COMMON <caller>] ([<caller>] <variable> <expr> ...) ...)</procedure>
+
+
+<procedure>(ERR-OR <caller> <expression> ...)</procedure>
+
+
+<procedure>(ERR-ORS (<caller> <expression> ...) ...)</procedure>
+
 
     * Each <variable> should be an argument of a procedure.
     * The <caller>, <expr>, and <expression> are any scheme expressions, but
