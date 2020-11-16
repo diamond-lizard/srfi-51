@@ -1,6 +1,4 @@
 * SRFI-51: Handling rest list
-** Author
-Joo ChurlSoo
 ** Related SRFIs
 The procedure and macros proposed in this SRFI make a strong combination with
 RECEIVE (SRFI 8) and LET-VALUES (SRFI 11).
@@ -191,6 +189,8 @@ num    => 2
 	   (c (or c (+ a b))))
       ...)))
 #+END_SRC
+** Author
+Joo ChurlSoo
 ** Copyright
 Copyright (C) Joo ChurlSoo (2004). All Rights Reserved.
 
