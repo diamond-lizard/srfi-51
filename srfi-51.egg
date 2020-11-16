@@ -1,0 +1,11 @@
+;;; srfi-51.egg -*- Scheme -*- vim: ft=scheme:
+
+((author "Joo ChurlSoo")
+ (maintainer "Sergey Goldgaber")
+ (synopsis "SRFI-51: Handling rest list")
+ (version "0.1")
+ (category lang-exts)
+ (dependencies srfi-1)
+ (test-dependencies test)
+ (license "MIT")
+ (components (extension srfi-51)))
