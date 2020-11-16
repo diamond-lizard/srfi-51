@@ -84,7 +84,7 @@ signal an error in case AND returns a false value.
 ARG-OR, ARG-ORS, ERR-OR, and ERR-ORS are the same as OR except that these
 signal an error in case OR returns a true value.
 ** Examples
-#+BEGIN_SRC scheme
+<enscript highlight="scheme">
 caller    => <procedure caller>
 rest-list => (x 1)
 (rest-values rest-list)	                 => x 1
@@ -188,7 +188,7 @@ num    => 2
     (let* ((b (or b (+ a 10)))
 	   (c (or c (+ a b))))
       ...)))
-#+END_SRC
+</enscript>
 ** Author
  * Joo ChurlSoo
  * Ported to Chicken Scheme 5 by Sergey Goldgaber
