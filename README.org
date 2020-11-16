@@ -1,18 +1,10 @@
-Title
-
-Handling rest list
-
-Author
-
+* SRFI-51: Handling rest list
+** Author
 Joo ChurlSoo
-
-Related SRFIs
-
+** Related SRFIs
 The procedure and macros proposed in this SRFI make a strong combination with
 RECEIVE (SRFI 8) and LET-VALUES (SRFI 11).
-
-Abstract
-
+** Abstract
 This SRFI introduces the REST-VALUES procedure which has three modes of
 operation:
 
@@ -27,15 +19,11 @@ operation:
 
 and eight macros which additionally check the rest arguments that are returned
 by REST-VALUES.
-
-Rationale
-
+** Rationale
 When defining a procedure with a variable number of arguments, REST-VALUES
 with or without the checking macros reduces the clutter of various
 conditionals and error conditions.
-
-Specification
-
+** Specification
 (REST-VALUES [<caller>] <rest-list> [<args-number-limit> <default> ...])
 
     * <caller> is any scheme expression.
@@ -96,9 +84,7 @@ signal an error in case AND returns a false value.
 
 ARG-OR, ARG-ORS, ERR-OR, and ERR-ORS are the same as OR except that these
 signal an error in case OR returns a true value.
-
-Examples
-
+** Examples
 caller    => <procedure caller>
 rest-list => (x 1)
 (rest-values rest-list)	                 => x 1
@@ -202,9 +188,7 @@ num    => 2
     (let* ((b (or b (+ a 10)))
 	   (c (or c (+ a b))))
       ...)))
-
-Implementation
-
+** Implementation
 The implementation below requires SRFI-1 (List library) and SRFI-23 (Error
 reporting mechanism).
 
@@ -467,9 +451,7 @@ reporting mechanism).
     ((err-ors (err expression ...) ...)
      (or (err-or err expression ...)
 	 ...))))
-
-Copyright
-
+** Copyright
 Copyright (C) Joo ChurlSoo (2004). All Rights Reserved.
 
 This document and translations of it may be copied and furnished to others, and
