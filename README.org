@@ -192,6 +192,8 @@ num    => 2
 ** Author
  * Joo ChurlSoo
  * Ported to Chicken Scheme 5 by Sergey Goldgaber
+** Version history
+*** [[https://github.com/diamond-lizard/srfi-51/releases/tag/0.1][0.1]] - Ported to Chicken Scheme 5
 ** Copyright
 Copyright (C) Joo ChurlSoo (2004). All Rights Reserved.
 
