@@ -1,9 +1,9 @@
 == SRFI-51: Handling rest list
 === Related SRFIs
 The procedure and macros proposed in this SRFI make a strong combination with
-RECEIVE ([[https://srfi.schemers.org/srfi-8/|SRFI 8]]) and LET-VALUES ([[https://srfi.schemers.org/srfi-11/|SRFI 11]]).
+{{RECEIVE}} ([[https://srfi.schemers.org/srfi-8/|SRFI 8]]) and {{LET-VALUES}} ([[https://srfi.schemers.org/srfi-11/|SRFI 11]]).
 === Abstract
-This SRFI introduces the REST-VALUES procedure which has three modes of
+This SRFI introduces the {{REST-VALUES}} procedure which has three modes of
 operation:
 
 1. it processes a rest list after checking its elements with default values or
@@ -16,9 +16,9 @@ operation:
    with the elements of a rest list,
 
 and eight macros which additionally check the rest arguments that are returned
-by REST-VALUES.
+by {{REST-VALUES}}.
 === Rationale
-When defining a procedure with a variable number of arguments, REST-VALUES
+When defining a procedure with a variable number of arguments, {{REST-VALUES}}
 with or without the checking macros reduces the clutter of various
 conditionals and error conditions.
 === Specification
@@ -45,11 +45,11 @@ conditionals and error conditions.
 
 1. (first mode of operation)
 
-   REST-VALUES checks whether each element of the <rest-list> is a member of
+   {{REST-VALUES}} checks whether each element of the <rest-list> is a member of
    the corresponding <default> list, or satisfies the predicate procedure of
    the corresponding <default> pair, and then returns the checked element(s).
-   If the element doesn't pass, REST-VALUES signals an error.  When there are
-   no more elements in the <rest-list>, then REST-VALUES additionally returns
+   If the element doesn't pass, {{REST-VALUES}} signals an error.  When there are
+   no more elements in the <rest-list>, then {{REST-VALUES}} additionally returns
    the car values of the remaining <default>s.  On the other hand, when the
    number of elements of the <rest-list> are more than the number of the
    <default>s, the supernumerary elements are additionally returned if the
@@ -58,18 +58,18 @@ conditionals and error conditions.
 
 2. (second mode of operation)
 
-   This is the same as the first except that REST-VALUES does not check each
+   This is the same as the first except that {{REST-VALUES}} does not check each
    element of the <rest-list>, and it uses - instead of +, and an absolute
    value instead of a simple value as the value of <args-number-limit>.
 
 3. (third mode of operation)
 
-   REST-VALUES checks whether any element of the <default> list is a member of
+   {{REST-VALUES}} checks whether any element of the <default> list is a member of
    the <rest-list>, or any element of the <rest-list> satisfies the predicate
    procedure of the <default> pair, and then returns the checked element.  If
-   the <default> doesn't pass, REST-VALUES returns the car value of the
+   the <default> doesn't pass, {{REST-VALUES}} returns the car value of the
    <default>.  When any elements of the <rest-list> are remained after the
-   above processing, REST-VALUES either signals an error if the
+   above processing, {{REST-VALUES}} either signals an error if the
    <args-number-limit> is #t, or returns the remaining elements of the
    <rest-list> if the <args-number-limit> is #f.
 ==== ARG and END procedures
