@@ -71,7 +71,7 @@ conditionals and error conditions.
    {{<default>}}.  When any elements of the {{<rest-list>}} are remained after the
    above processing, {{REST-VALUES}} either signals an error if the
    {{<args-number-limit>}} is {{#t}}, or returns the remaining elements of the
-   {{<rest-list>}} if the {{<args-number-limit>}} is #f.
+   {{<rest-list>}} if the {{<args-number-limit>}} is {{#f}}.
 ==== ARG and END procedures
 
 <procedure>(ARG-AND [<caller>] <variable> <expr> ...)</procedure>
