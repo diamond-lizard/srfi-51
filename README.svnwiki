@@ -36,12 +36,15 @@ conditionals and error conditions.
     * 1. When the <args-number-limit> is + or a positive integer,
          each <default> should be a list that contains default value(s), or a
     	 pair whose car is a default value and cdr is a predicate procedure.
+
       2. When the <args-number-limit> is - or a negative integer,
 	 each <default> is any scheme expression. 
+
       3. When the <args-number-limit> is a boolean,
 	 each <default> is the same as 1.
 
 1. (first mode of operation)
+
    REST-VALUES checks whether each element of the <rest-list> is a member of
    the corresponding <default> list, or satisfies the predicate procedure of
    the corresponding <default> pair, and then returns the checked element(s).
@@ -54,6 +57,7 @@ conditionals and error conditions.
    elements of the <rest-list>.
 
 2. (second mode of operation)
+
    This is the same as the first except that REST-VALUES does not check each
    element of the <rest-list>, and it uses - instead of +, and an absolute
    value instead of a simple value as the value of <args-number-limit>.
