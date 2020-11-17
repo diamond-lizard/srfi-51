@@ -45,33 +45,33 @@ conditionals and error conditions.
 
 1. (first mode of operation)
 
-   {{REST-VALUES}} checks whether each element of the <rest-list> is a member of
+   {{REST-VALUES}} checks whether each element of the {{<rest-list>}} is a member of
    the corresponding <default> list, or satisfies the predicate procedure of
    the corresponding <default> pair, and then returns the checked element(s).
    If the element doesn't pass, {{REST-VALUES}} signals an error.  When there are
-   no more elements in the <rest-list>, then {{REST-VALUES}} additionally returns
+   no more elements in the {{<rest-list>}}, then {{REST-VALUES}} additionally returns
    the car values of the remaining <default>s.  On the other hand, when the
-   number of elements of the <rest-list> are more than the number of the
+   number of elements of the {{<rest-list>}} are more than the number of the
    <default>s, the supernumerary elements are additionally returned if the
    <args-number-limit> is +, or its value is not less than the number of
-   elements of the <rest-list>.
+   elements of the {{<rest-list>}}.
 
 2. (second mode of operation)
 
    This is the same as the first except that {{REST-VALUES}} does not check each
-   element of the <rest-list>, and it uses - instead of +, and an absolute
+   element of the {{<rest-list>}}, and it uses - instead of +, and an absolute
    value instead of a simple value as the value of <args-number-limit>.
 
 3. (third mode of operation)
 
    {{REST-VALUES}} checks whether any element of the <default> list is a member of
-   the <rest-list>, or any element of the <rest-list> satisfies the predicate
+   the {{<rest-list>}}, or any element of the {{<rest-list>}} satisfies the predicate
    procedure of the <default> pair, and then returns the checked element.  If
    the <default> doesn't pass, {{REST-VALUES}} returns the car value of the
-   <default>.  When any elements of the <rest-list> are remained after the
+   <default>.  When any elements of the {{<rest-list>}} are remained after the
    above processing, {{REST-VALUES}} either signals an error if the
    <args-number-limit> is #t, or returns the remaining elements of the
-   <rest-list> if the <args-number-limit> is #f.
+   {{<rest-list>}} if the <args-number-limit> is #f.
 ==== ARG and END procedures
 
 <procedure>(ARG-AND [<caller>] <variable> <expr> ...)</procedure>
