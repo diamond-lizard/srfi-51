@@ -6,21 +6,15 @@ The procedure and macros proposed in this SRFI make a strong combination with
 This SRFI introduces the {{REST-VALUES}} procedure which has three modes of
 operation:
 
-1. it processes a rest list after checking its elements with default values or
-   predicate procedures,
+1. it processes a rest list after checking its elements with default values or predicate procedures,
 
 2. it processes a rest list with default values without checking its elements,
 
-3. it processes a default list whose elements are lists or pairs, after
-   checking their elements that are default values or predicate procedures
-   with the elements of a rest list,
+3. it processes a default list whose elements are lists or pairs, after checking their elements that are default values or predicate procedures with the elements of a rest list,
 
-and eight macros which additionally check the rest arguments that are returned
-by {{REST-VALUES}}.
+and eight macros which additionally check the rest arguments that are returned by {{REST-VALUES}}.
 === Rationale
-When defining a procedure with a variable number of arguments, {{REST-VALUES}}
-with or without the checking macros reduces the clutter of various
-conditionals and error conditions.
+When defining a procedure with a variable number of arguments, {{REST-VALUES}} with or without the checking macros reduces the clutter of various conditionals and error conditions.
 === Specification
 ==== REST-VALUES
 <procedure>(REST-VALUES [<caller>] <rest-list> [<args-number-limit> <default> ...])</procedure>
@@ -33,45 +27,32 @@ conditionals and error conditions.
 
 {{<args-number-limit>}} should be an integer, +, -, or a boolean.
 
-    * 1. When the {{<args-number-limit>}} is + or a positive integer,
-         each {{<default>}} should be a list that contains default value(s), or a
-    	 pair whose car is a default value and cdr is a predicate procedure.
+* 1. When the {{<args-number-limit>}} is + or a positive integer, each {{<default>}} should be a list that contains default value(s), or a pair whose car is a default value and cdr is a predicate procedure.
 
-      2. When the {{<args-number-limit>}} is - or a negative integer,
-	 each {{<default>}} is any scheme expression. 
+* 2. When the {{<args-number-limit>}} is - or a negative integer, each {{<default>}} is any scheme expression. 
 
-      3. When the {{<args-number-limit>}} is a boolean,
-	 each {{<default>}} is the same as 1.
+* 3. When the {{<args-number-limit>}} is a boolean, each {{<default>}} is the same as 1.
 
-1. (first mode of operation)
+* 1. (first mode of operation)
 
-   {{REST-VALUES}} checks whether each element of the {{<rest-list>}} is a member of
-   the corresponding {{<default>}} list, or satisfies the predicate procedure of
-   the corresponding {{<default>}} pair, and then returns the checked element(s).
-   If the element doesn't pass, {{REST-VALUES}} signals an error.  When there are
-   no more elements in the {{<rest-list>}}, then {{REST-VALUES}} additionally returns
-   the car values of the remaining {{<default>}}s.  On the other hand, when the
-   number of elements of the {{<rest-list>}} are more than the number of the
-   {{<default>}}s, the supernumerary elements are additionally returned if the
-   {{<args-number-limit>}} is +, or its value is not less than the number of
-   elements of the {{<rest-list>}}.
+{{REST-VALUES}} checks whether each element of the {{<rest-list>}} is a member of
+the corresponding {{<default>}} list, or satisfies the predicate procedure of
+the corresponding {{<default>}} pair, and then returns the checked element(s).
+If the element doesn't pass, {{REST-VALUES}} signals an error.  When there are
+no more elements in the {{<rest-list>}}, then {{REST-VALUES}} additionally returns
+the car values of the remaining {{<default>}}s.  On the other hand, when the
+number of elements of the {{<rest-list>}} are more than the number of the
+{{<default>}}s, the supernumerary elements are additionally returned if the
+{{<args-number-limit>}} is +, or its value is not less than the number of
+elements of the {{<rest-list>}}.
 
-2. (second mode of operation)
+* 2. (second mode of operation)
 
-   This is the same as the first except that {{REST-VALUES}} does not check each
-   element of the {{<rest-list>}}, and it uses - instead of +, and an absolute
-   value instead of a simple value as the value of {{<args-number-limit>}}.
+This is the same as the first except that {{REST-VALUES}} does not check each element of the {{<rest-list>}}, and it uses - instead of +, and an absolute value instead of a simple value as the value of {{<args-number-limit>}}.
 
 3. (third mode of operation)
 
-   {{REST-VALUES}} checks whether any element of the {{<default>}} list is a member of
-   the {{<rest-list>}}, or any element of the {{<rest-list>}} satisfies the predicate
-   procedure of the {{<default>}} pair, and then returns the checked element.  If
-   the {{<default>}} doesn't pass, {{REST-VALUES}} returns the car value of the
-   {{<default>}}.  When any elements of the {{<rest-list>}} are remained after the
-   above processing, {{REST-VALUES}} either signals an error if the
-   {{<args-number-limit>}} is {{#t}}, or returns the remaining elements of the
-   {{<rest-list>}} if the {{<args-number-limit>}} is {{#f}}.
+{{REST-VALUES}} checks whether any element of the {{<default>}} list is a member of the {{<rest-list>}}, or any element of the {{<rest-list>}} satisfies the predicate procedure of the {{<default>}} pair, and then returns the checked element.  If the {{<default>}} doesn't pass, {{REST-VALUES}} returns the car value of the {{<default>}}.  When any elements of the {{<rest-list>}} are remained after the above processing, {{REST-VALUES}} either signals an error if the {{<args-number-limit>}} is {{#t}}, or returns the remaining elements of the {{<rest-list>}} if the {{<args-number-limit>}} is {{#f}}.
 ==== ARG and END procedures
 
 <procedure>(ARG-AND [<caller>] <variable> <expr> ...)</procedure>
@@ -99,9 +80,8 @@ conditionals and error conditions.
 <procedure>(ERR-ORS (<caller> <expression> ...) ...)</procedure>
 
 
-    * Each {{<variable>}} should be an argument of a procedure.
-    * The {{<caller>}}, {{<expr>}}, and {{<expression>}} are any scheme expressions, but
-      the {{<expr>}} should contain the corresponding {{<variable>}}.
+* Each {{<variable>}} should be an argument of a procedure.
+* The {{<caller>}}, {{<expr>}}, and {{<expression>}} are any scheme expressions, but the {{<expr>}} should contain the corresponding {{<variable>}}.
 
 {{ARG-AND}}, {{ARG-ANDS}}, {{ERR-AND}}, and {{ERR-ANDS}} are the same as {{AND}} except that these
 signal an error in case {{AND}} returns a false value.
