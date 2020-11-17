@@ -103,8 +103,8 @@ conditionals and error conditions.
     * The {{<caller>}}, {{<expr>}}, and {{<expression>}} are any scheme expressions, but
       the {{<expr>}} should contain the corresponding {{<variable>}}.
 
-ARG-AND, ARG-ANDS, ERR-AND, and ERR-ANDS are the same as AND except that these
-signal an error in case AND returns a false value.
+{{ARG-AND}}, {{ARG-ANDS}}, {{ERR-AND}}, and {{ERR-ANDS}} are the same as {{AND}} except that these
+signal an error in case {{AND}} returns a false value.
 
 ARG-OR, ARG-ORS, ERR-OR, and ERR-ORS are the same as OR except that these
 signal an error in case OR returns a true value.
